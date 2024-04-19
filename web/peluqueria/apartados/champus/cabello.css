@@ -2,6 +2,9 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url(./../../../logo.png);
+    background-repeat: repeat-x;
+    background-size: 300px;
 }
 
 header {
@@ -9,12 +12,15 @@ header {
     color: white;
     padding: 18px;
     text-align: center;
-
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
+
 
 /* Estilos para el contenido del dropdown */
 .dropdown-content {
-    display: none;
+    display: none;  
     position: absolute;
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -35,6 +41,7 @@ header {
     background-color: blue;
 }
 
+/* Mostrar el dropdown cuando el mouse pasa sobre el elemento padre */
 .desplegado {
     position: relative; /* Hacer que el elemento padre sea el marco de referencia para el dropdown */
 }
@@ -42,13 +49,11 @@ header {
 .desplegado:hover .dropdown-content {
     display: block;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 100%; /* Colocar el dropdown justo debajo del elemento padre */
+    left: 0; /* Alinear el dropdown a la izquierda del elemento padre */
     background-color: #F33A53;
-  }
-
-/*menu interno*/
-
+    
+}
 
 .menu {
     margin: auto; /* Centrar el menú horizontalmente */
@@ -84,7 +89,6 @@ nav ul li {
     margin-right: 20px; 
     margin-bottom: 20px;
 }
-/*menu interno*/
 
 .cesta img{
     width: 5vh;
@@ -96,21 +100,11 @@ nav ul li {
     width: 5vh;
     height: 5vh;  
     margin-bottom: -2vh;
-    
 }
 
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-.desplegado a {
+.desplegado a{
     text-decoration: none;
-    color: white;
+    color: white; 
 }
 
 #contenido {
@@ -123,19 +117,18 @@ nav ul li {
     width: 100%;
 }
 
-
 @media only screen and (max-width: 400px) {
     #desplegado {
-        display: none;
+        display: none;   
     }
 
     #plegable {
-        /* QUITAR FLECHA MENÚ */
+        /*QUITAR FLECHA MENÚ*/
         -webkit-appearance: none;
         -moz-appearance: none;
-        appearance: none;
-        /* QUITAR FLECHA MENÚ */
-        background: transparent url(./../../../menu.png) no-repeat;
+        appearance: none; 
+        /*QUITAR FLECHA MENÚ*/
+        background: transparent url(./../menu.png) no-repeat;
         background-size: 5vh 4vh;
         width: 5vh;
         height: 4vh;
@@ -146,7 +139,6 @@ nav ul li {
         display: flex; /* Usar flexbox */
         justify-content: space-between; /* Espaciado uniforme entre los elementos */
         align-items: center; /* Centrar verticalmente los elementos */
-
     }
 
     .desplegado,
@@ -160,24 +152,19 @@ nav ul li {
         margin: auto;
     }
 
+    .menu li {
+        display: block; /* Mostrar los elementos del menú en bloques */
+        margin-bottom: 10px; /* Espacio entre elementos del menú en pantallas pequeñas */
+    }
+
     .cesta {
         margin-left: auto; /* Mover el ícono del carrito a la derecha */
     }
-
     #logo {
         width: 100%;
         height: 31vh;
         margin-bottom: -0.6vh;
     }
-
-    .plegable {
-        display: block; /* Mostrar el select */
-    }
-
-    .menu {
-        display: none !important; /* Ocultar la lista ul */
-    }
-
 }
 
 @media only screen and (min-width: 400px) {
@@ -199,24 +186,20 @@ nav ul li {
         display: none;
     }
 
+
     #logo {
-        width: 35vh;
-        height: auto;
-        display: grid;
-        opacity: 0.0s;
-        position: relative;
-        float: left;
+        width: 300px; /* Mantén el ancho del logo constante */
+        height: auto; /* Mantén el aspecto proporcional */
+        display: flex;
+        
     }
     
-     /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
+    /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
     header {
-        height: auto; /* Establecemos la altura a 'auto' para que se ajuste automáticamente */
-        display: flex; /* Usamos flexbox para alinear verticalmente los elementos */
-        flex-direction: column; /* Alineamos los elementos en columna */
-        align-items: center; /* Centramos los elementos horizontalmente */
-        padding: auto;
-
+        height: auto;
+        display: flex;
     }
+
 
     .cesta {
         margin-left: auto; /* Mover el ícono del carrito a la derecha */
@@ -232,8 +215,6 @@ nav ul li {
     .menu {
         display: block;
     }
-
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -260,21 +241,15 @@ nav ul li {
     }
 
     #logo {
-        width: 35vh;
-        height: auto;
-        display: grid;
-        opacity: 0.0s;
-        position: relative;
-        float: left;
+        width: 300px; /* Mantén el ancho del logo constante */
+        height: auto; /* Mantén el aspecto proporcional */
+        display: flex;
     }
-
-     /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
+    
+    /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
     header {
-        height: auto; /* Establecemos la altura a 'auto' para que se ajuste automáticamente */
-        display: flex; /* Usamos flexbox para alinear verticalmente los elementos */
-        flex-direction: column; /* Alineamos los elementos en columna */
-        align-items: center; /* Centramos los elementos horizontalmente */
-        padding: 0%;
+        height: auto;
+
     }
 
     .cesta {
@@ -287,5 +262,4 @@ nav ul li {
         align-items: center; /* Centrar verticalmente los elementos */
 
 }
-
 }

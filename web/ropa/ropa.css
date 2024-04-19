@@ -2,6 +2,9 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url(./../logo.png);
+    background-repeat: repeat-x;
+    background-size: 300px;
 }
 
 header {
@@ -9,6 +12,9 @@ header {
     color: white;
     padding: 18px;
     text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -180,24 +186,20 @@ nav ul li {
         display: none;
     }
 
+
     #logo {
-        width: 35vh;
-        height: auto;
-        display: grid;
-        opacity: 0.0s;
-        position: relative;
-        float: left;
+        width: 300px; /* Mantén el ancho del logo constante */
+        height: auto; /* Mantén el aspecto proporcional */
+        display: flex;
+        
     }
     
-     /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
+    /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
     header {
-        height: auto; /* Establecemos la altura a 'auto' para que se ajuste automáticamente */
-        display: flex; /* Usamos flexbox para alinear verticalmente los elementos */
-        flex-direction: column; /* Alineamos los elementos en columna */
-        align-items: center; /* Centramos los elementos horizontalmente */
-        padding: auto;
-
+        height: auto;
+        display: flex;
     }
+
 
     .cesta {
         margin-left: auto; /* Mover el ícono del carrito a la derecha */
@@ -239,21 +241,15 @@ nav ul li {
     }
 
     #logo {
-        width: 35vh;
-        height: auto;
-        display: grid;
-        opacity: 0.0s;
-        position: relative;
-        float: left;
+        width: 300px; /* Mantén el ancho del logo constante */
+        height: auto; /* Mantén el aspecto proporcional */
+        display: flex;
     }
-
-     /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
+    
+    /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
     header {
-        height: auto; /* Establecemos la altura a 'auto' para que se ajuste automáticamente */
-        display: flex; /* Usamos flexbox para alinear verticalmente los elementos */
-        flex-direction: column; /* Alineamos los elementos en columna */
-        align-items: center; /* Centramos los elementos horizontalmente */
-        padding: 0%;
+        height: auto;
+
     }
 
     .cesta {

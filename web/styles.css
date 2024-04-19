@@ -2,6 +2,9 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url(logo.png);
+    background-repeat: repeat-x;
+    background-size: 300px;
 }
 
 header {
@@ -9,7 +12,11 @@ header {
     color: white;
     padding: 18px;
     text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
+
 
 /* Estilos para el contenido del dropdown */
 .dropdown-content {
@@ -124,9 +131,14 @@ nav ul li {
     }
 
     #logo {
-        width: 100%;
-        height: 31vh;
-        margin-bottom: -0.6vh;
+        width: 100%; /* Cambia el ancho del logo a 20px */
+        height: 200px; /* Cambia la altura del logo a 20px */
+        display: grid;
+        opacity: 0.0s;
+        position: relative;
+        float: left;
+
+        
     }
 
     .plegable {
@@ -136,6 +148,7 @@ nav ul li {
     .menu {
         display: none !important; /* Ocultar la lista ul */
     }
+    
 }
 
 @media only screen and (min-width: 401px) and (max-width: 767px) {
@@ -157,23 +170,35 @@ nav ul li {
         display: none;
     }
 
+    #plegable {
+        /* QUITAR FLECHA MENÚ */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        /* QUITAR FLECHA MENÚ */
+        background: transparent url(menu.png) no-repeat;
+        background-size: 5vh 4vh;
+        width: 5vh;
+        height: 4vh;
+        border-radius: 5px;
+    }
+    .desplegado,
+    select {
+        list-style: none;
+        display: flex; /* Usar flexbox */
+    }
+
     #logo {
-        width: 35vh;
-        height: auto;
-        display: grid;
-        opacity: 0.0s;
-        position: relative;
-        float: left;
+        width: 300px; /* Mantén el ancho del logo constante */
+        height: auto; /* Mantén el aspecto proporcional */
+        display: flex;
+        
     }
     
-     /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
+    /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
     header {
-        height: auto; /* Establecemos la altura a 'auto' para que se ajuste automáticamente */
-        display: flex; /* Usamos flexbox para alinear verticalmente los elementos */
-        flex-direction: column; /* Alineamos los elementos en columna */
-        align-items: center; /* Centramos los elementos horizontalmente */
-        padding: auto;
-
+        height: auto;
+        display: flex;
     }
 
     .cesta {
@@ -184,15 +209,14 @@ nav ul li {
         display: flex; /* Usar flexbox */
         justify-content: space-between; /* Espaciado uniforme entre los elementos */
         align-items: center; /* Centrar verticalmente los elementos */
-
-}
-
-    .menu {
-        display: block;
     }
 
-
+    .menu {
+        display: none;
+    }
 }
+
+
 
 @media only screen and (min-width: 768px) {
     /* For desktop: */
@@ -213,26 +237,16 @@ nav ul li {
         display: none;
     }
 
-    .menu {
-        display: block;
-    }
-
     #logo {
-        width: 35vh;
-        height: auto;
-        display: grid;
-        opacity: 0.0s;
-        position: relative;
-        float: left;
+        width: 300px; /* Mantén el ancho del logo constante */
+        height: auto; /* Mantén el aspecto proporcional */
+        display: flex;
     }
-
-     /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
+    
+    /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
     header {
-        height: auto; /* Establecemos la altura a 'auto' para que se ajuste automáticamente */
-        display: flex; /* Usamos flexbox para alinear verticalmente los elementos */
-        flex-direction: column; /* Alineamos los elementos en columna */
-        align-items: center; /* Centramos los elementos horizontalmente */
-        padding: 0%;
+        height: auto;
+
     }
 
     .cesta {
@@ -243,6 +257,13 @@ nav ul li {
         display: flex; /* Usar flexbox */
         justify-content: space-between; /* Espaciado uniforme entre los elementos */
         align-items: center; /* Centrar verticalmente los elementos */
+    }
 
+    .menu {
+        display: block;
+    }
 }
+
+
+
 }

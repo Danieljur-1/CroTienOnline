@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     var select = document.getElementById('plegable');
     var menu = document.getElementById('menu');
@@ -7,11 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var selectedOption = select.options[select.selectedIndex];
         var url = selectedOption.value;
         if (url) {
-        window.location.href = url;
+            window.location.href = url;
         }
     });
 
-    
     function handleViewportChange() {
         var select = document.getElementById('plegable');
         var menu = document.getElementById('menu');
@@ -25,9 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    
     handleViewportChange();
 
-    
     window.addEventListener('resize', handleViewportChange);
 });
