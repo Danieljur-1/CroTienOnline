@@ -1,3 +1,6 @@
+
+
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -5,29 +8,29 @@ body {
     background-image: url(./../logo.png);
     background-repeat: repeat-x;
     background-size: 300px;
-
 }
 
 header {
     background-color: #A3284D;
     color: white;
-    padding: 33px;
+    padding: 22px;
     text-align: center;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
 
+
 /* Estilos para el contenido del dropdown */
 .dropdown-content {
-    display: none;
+    display: none;  
     position: absolute;
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
     padding: 0;
-    column-count: 4; /* Number of columns */
-    height: 160px; /* Set the height of the dropdown menu */
+    column-count: 2; /* Number of columns */
+    height: 280px; /* Set the height of the dropdown menu */
   }
   
   .dropdown-content li {
@@ -41,6 +44,7 @@ header {
     background-color: blue;
 }
 
+/* Mostrar el dropdown cuando el mouse pasa sobre el elemento padre */
 .desplegado {
     position: relative; /* Hacer que el elemento padre sea el marco de referencia para el dropdown */
 }
@@ -48,16 +52,35 @@ header {
 .desplegado:hover .dropdown-content {
     display: block;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 100%; /* Colocar el dropdown justo debajo del elemento padre */
+    left: 0; /* Alinear el dropdown a la izquierda del elemento padre */
     background-color: #F33A53;
-  }
+    
+}
 
-  
-.inicio img{
-    width: 5vh;
-    height: 5vh;  
-    margin-bottom: -2vh;
+.menu {
+    margin: auto; /* Centrar el menú horizontalmente */
+    padding: 10px; /* Añadir espacio entre líneas */
+    text-align: center; /* Centrar los elementos del menú */ 
+}
+
+.menu li {
+    display: inline-block; /* Mostrar los elementos del menú en línea */
+    margin-right: 20px; /* Espacio entre elementos del menú */ 
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 5px; 
+    background-color: blue;
+    display: inline-block; /* Asegurar que el ancho se aplique correctamente */
+    width: 20vh; /* Establecer el ancho deseado */
+    line-height: 2.5; /* Ajustar la altura de línea para centrar verticalmente el texto */
+}
+
+.menu a:hover {
+    color: red;
 }
 
 nav ul {
@@ -66,12 +89,20 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 20px; 
+    margin-bottom: 20px;
 }
 
-.desplegado a {
+
+.inicio img{
+    width: 5vh;
+    height: 5vh;  
+    margin-bottom: -2vh;
+}
+
+.desplegado a{
     text-decoration: none;
-    color: white;
+    color: white; 
 }
 
 #contenido {
@@ -85,58 +116,55 @@ nav ul li {
 }
 
 @media only screen and (max-width: 400px) {
-#desplegado{
-    display: none;   
+    #desplegado {
+        display: none;   
+    }
+
+    #plegable {
+        /*QUITAR FLECHA MENÚ*/
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none; 
+        /*QUITAR FLECHA MENÚ*/
+        background: transparent url(./../menu.png) no-repeat;
+        background-size: 5vh 4vh;
+        width: 5vh;
+        height: 4vh;
+        border-radius: 5px;
+    }
+
+    nav {
+        display: flex; /* Usar flexbox */
+        justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        align-items: center; /* Centrar verticalmente los elementos */
+    }
+
+    .desplegado,
+    select {
+        list-style: none;
+        display: flex; /* Usar flexbox */
+    }
+
+    .desplegado li,
+    select {
+        margin: auto;
+    }
+
+    .menu li {
+        display: block; /* Mostrar los elementos del menú en bloques */
+        margin-bottom: 10px; /* Espacio entre elementos del menú en pantallas pequeñas */
+    }
+
+    .cesta {
+        margin-left: auto; /* Mover el ícono del carrito a la derecha */
+    }
+    #logo {
+        width: 100%;
+        height: 31vh;
+        margin-bottom: -0.6vh;
+    }
 }
 
-#plegable {
-    /*QUITAR FLECHA MENÚ*/
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; 
-    /*QUITAR FLECHA MENÚ*/
-    background: transparent url(./../menu.png) no-repeat;
-    background-size: 5vh 4vh;
-    width: 5vh;
-    height: 4vh;
-    border-radius: 5px;
-}
-
-nav {
-    display: flex; /* Usar flexbox */
-    justify-content: space-between; /* Espaciado uniforme entre los elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
-    margin: auto;
-}
-
-.desplegado,
-select {
-    list-style: none;
-    display: flex; /* Usar flexbox */
-}
-
-.desplegado li,
-select {
-    margin: auto;
-}
-
-header {
-    height: auto;
-    display: flex;
-}
-
-.cesta {
-    margin-left: auto; /* Mover el ícono del carrito a la derecha */
-}
-
-#logo {
-    width: 300px; /* Mantén el ancho del logo constante */
-    height: auto; /* Mantén el aspecto proporcional */
-    display: flex;
-    
-}
-
-}
 @media only screen and (min-width: 400px) {
     /* For tablets: */
     .col-s-1 {width: 8.33%;}
@@ -152,26 +180,27 @@ header {
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
 
-    #plegable{
+    #plegable {
         display: none;
     }
+
 
     #logo {
         width: 300px; /* Mantén el ancho del logo constante */
         height: auto; /* Mantén el aspecto proporcional */
         display: flex;
+        
     }
-
-    .menu {
-        display: block;
-    }
-
+    
+    /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
     header {
-        height: auto; /* Establecemos la altura a 'auto' para que se ajuste automáticamente */
-        display: flex; /* Usamos flexbox para alinear verticalmente los elementos */
-        flex-direction: column; /* Alineamos los elementos en columna */
-        align-items: center; /* Centramos los elementos horizontalmente */
-        padding: 200px;
+        height: auto;
+        display: flex;
+    }
+
+
+    .cesta {
+        margin-left: auto; /* Mover el ícono del carrito a la derecha */
     }
 
     nav {
@@ -180,7 +209,10 @@ header {
         align-items: center; /* Centrar verticalmente los elementos */
 
 }
-    
+
+    .menu {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -198,8 +230,12 @@ header {
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
 
-    #plegable{
+    #plegable {
         display: none;
+    }
+
+    .menu {
+        display: block;
     }
 
     #logo {
@@ -207,13 +243,15 @@ header {
         height: auto; /* Mantén el aspecto proporcional */
         display: flex;
     }
+    
+    /* Ajuste para que el header se ajuste automáticamente a la altura del logo */
+    header {
+        height: auto;
 
-    .menu {
-        display: block;
     }
 
-    header {
-        padding: 4.8px;
+    .cesta {
+        margin-left: auto; /* Mover el ícono del carrito a la derecha */
     }
 
     nav {
